@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Pictures Gallery</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Roboto&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="dist/bundle.css">
+    <script src="https://cdn.jsdelivr.net/npm/exif-js"></script>
+</head>
+<body>
+    <header>
+        <div class="container">
+            <h1 class="page-title">Pictures gallery</h1>
+        </div>
+    </header>
+    <section>
+        <div class="container">
+            <input type="file" id="fileInput" multiple>
+            <button id="fileSelect" class="btn">
+                <span class="select-txt">Select files</span>
+                <span class="drag-drop-txt">or drag nad drop here</span>
+            </button>
+        </div>
+        <div class="container">
+            <button id="uploadButton" class="btn_upload">upload</button>
+        </div>
+        <div class="container flex-column">
+            <div id="selectInfo"></div>
+            <div id="error" class="error-message"></div>
+        </div>
+    </section>
+    <section>
+        <div class="container">
+            <ul id="list" class="gallery"></ul>
+        </div>
+    </section>
+    <script src="./dist/bundle.js"></script>
+
+</body>
+</html>

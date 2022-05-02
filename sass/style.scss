@@ -1,0 +1,184 @@
+@import "normalize";
+
+$font: 'Roboto', sans-serif;
+
+html {
+  font-family: $font;
+  font-size: 62.5%; /*10px*/
+  box-sizing: border-box;
+}
+
+body {
+  font-size: 1.4rem;
+}
+
+.container {
+  max-width: 560px;
+  margin: 0 auto;
+  padding: 1rem;
+  display: flex;
+  justify-content: center;
+}
+
+.flex-column {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+@media screen and (max-width: 450px) {
+  .list-item {
+    flex-direction: column;
+    align-items: center;
+  }
+}
+
+header h1 {
+  text-transform: uppercase;
+}
+
+.page-title {
+  text-align: center;
+}
+
+.error-message {
+  padding: 1rem;
+  display: none;
+  margin: 1rem 0;
+  border: 0.1rem solid #e53935;
+}
+
+.error-container {
+  padding: 1rem;
+  margin: 1rem 0;
+  border: 0.1rem solid #e53935;
+}
+
+.error {
+  color: red;
+}
+
+.gallery {
+  padding: 0;
+  list-style: none;
+}
+
+.list-item {
+  display: flex;
+  align-items: center;
+  padding: 0.8rem;
+  margin: 0.8rem 0;
+  border: 0.1rem solid #ccc;
+  border-radius: 0.3rem;
+}
+
+/*li::marker {*/
+/*  color: red*/
+/*}*/
+
+.id-el {
+  display: inline-block;
+  padding: 0 1rem;
+  font-size: 2.4rem;
+}
+
+.file-description {
+  display: inline-block;
+  margin: 1rem auto;
+  padding: 1rem;
+  max-width: 20rem;
+  text-align: left;
+  /*border: 1px solid #ccc;*/
+  font-size: 1.6rem;
+}
+
+/*Note: opacity is used to hide the file input instead of visibility: hidden
+or display: none, because assistive technology interprets
+the latter two styles to mean the file input isn't interactive.*/
+input[type="file"] {
+  display: none;
+}
+
+button[class*="-"],
+.btn_upload,
+.btn {
+  transition: all .5s ease;
+  display: inline-block;
+  padding: 1rem 2.5rem;
+  margin: 0.5rem 0 0 0.5rem;
+  font-size: 1.6rem;
+  cursor: pointer;
+  border: 0.1rem solid #ccc;
+  border-radius: 0.3rem;
+  background-color: #fff;
+  color: #000;
+}
+
+.btn {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  width: 100%;
+  height: 20rem;
+}
+
+button[class*="-"]:hover,
+.btn_upload:hover,
+.btn:hover,
+.dragover {
+  background-color: #aeafb3;
+  color: #fff;
+}
+
+.btn_upload:focus {
+  background-color: #707172;
+  color: #fff;
+  border-color: #aeafb3;
+}
+
+.btn_upload,
+.btn .select-txt {
+  text-transform: uppercase;
+}
+
+.select-txt, .drag-drop-txt {
+  max-width: 100%;
+  display: inline-block;
+  padding: 1rem 2rem;
+}
+
+.drag-drop-txt {
+  font-size: 1.4rem;
+}
+
+
+.tooltip {
+  position: relative;
+  display: inline-block;
+  margin-right: 0.5rem;
+}
+
+.tooltip .tooltip-text {
+  visibility: hidden;
+  width: 12rem;
+  background-color: black;
+  color: #fff;
+  text-align: center;
+  border-radius: 0.6rem;
+  padding: 0.5rem 0;
+
+  /* Position the tooltip */
+  position: absolute;
+  top: -10px;
+  left: 0;
+  /*z-index: 1;*/
+}
+
+.tooltip:hover {
+  cursor: pointer;
+}
+
+.tooltip:hover .tooltip-text {
+  visibility: visible;
+}
