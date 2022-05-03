@@ -1,9 +1,11 @@
-export function removeListEl(list, uploadedFiles) {
+import {generateList} from "./generateList";
+
+export function enableRemoveButtons(list, uploadedFiles) {
     document.querySelectorAll('.button').forEach((button, idx) => {
         button.onclick = (e) => {
             const id = e.target.classList[1].split('-')[1];
             list.removeChild(document.querySelector(`.list-item-${id}`));
-            uploadedFiles.splice(parseInt(id), 1);
+            delete uploadedFiles[`${id}`];
             updateId();
         }
     });

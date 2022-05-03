@@ -1,15 +1,21 @@
-const MiniCssExtractPlugin = require("mini-css-extract-plugin");
+const MiniCssExtractPlugin = require('mini-css-extract-plugin');
+const HTMLWebpackPlugin = require('html-webpack-plugin');
 
 const path = require('path');
 
 module.exports = {
+    mode: 'development',
 
     entry: './js/main.js',
 
     output: {
-        path: path.resolve(__dirname, 'dist'),
+        path: path.resolve(__dirname, 'build'),
         publicPath: '',
         filename: 'bundle.js'
+    },
+
+    devServer: {
+        static: './build',
     },
 
     module: {
@@ -31,25 +37,28 @@ module.exports = {
                         loader: MiniCssExtractPlugin.loader
                     },
                     {
-                        loader: "css-loader",
+                        loader: 'css-loader',
                     },
                     {
-                        loader: "postcss-loader"
+                        loader: 'postcss-loader'
                     },
                     {
-                        loader: "sass-loader",
+                        loader: 'sass-loader',
                         options: {
-                            implementation: require("sass")
+                            implementation: require('sass')
                         }
                     }
                 ]
             }
         ]
     },
+
     plugins: [
+        new HTMLWebpackPlugin({
+            template: 'index.html',
+        }),
         new MiniCssExtractPlugin({
-            filename: "bundle.css"
+            filename: 'bundle.css'
         })
     ],
-    mode: 'development'
 };

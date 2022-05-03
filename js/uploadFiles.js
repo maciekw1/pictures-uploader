@@ -1,14 +1,15 @@
-import {clear} from "./uploadBtnMethods/clear.js";
-import displayValidationError from "./uploadBtnMethods/displayValidationError.js";
-import {generateList} from "./uploadBtnMethods/generateList.js";
-import {removeListEl} from "./uploadBtnMethods/removeListEl.js";
-import {uploadOnCondition} from "./uploadBtnMethods/uploadOnCondition.js";
+import {clear} from './uploadBtnMethods/clear.js';
+import displayValidationError from './uploadBtnMethods/displayValidationError.js';
+import {generateList} from './uploadBtnMethods/generateList.js';
+import {enableRemoveButtons} from './uploadBtnMethods/enableRemoveButtons.js';
+import {uploadOnCondition} from './uploadBtnMethods/uploadOnCondition.js';
 
 const list = document.querySelector('#list');
-const uploadedFiles = [];
+const uploadedFiles = {};
 
 export function upload(selectedFiles, selectInfo, validationError, fileInput) {
-    let errorFiles = [];
+    const errorFiles = [];
+
     //clears error field to prevent multiple error messages after multiple upload attempts
     clear(validationError, errorFiles, selectInfo);
 
@@ -21,7 +22,8 @@ export function upload(selectedFiles, selectInfo, validationError, fileInput) {
 
     generateList(uploadedFiles, list);
 
-    removeListEl(list, uploadedFiles);
+    enableRemoveButtons(list, uploadedFiles);
+
     // clears input field after upload to prevent multiple uploads of the same files
     fileInput.value = '';
     selectedFiles.length = 0;

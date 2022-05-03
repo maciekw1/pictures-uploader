@@ -1,16 +1,13 @@
 export function exif(file, placeholder) {
-    console.log(EXIF);
-
     EXIF.getData(file, function () {
-        // console.log(EXIF.pretty(this));
         //prevents throwing error when no exif GPS data is present
         if (this.exifdata.GPSLatitudeRef) {
 
             const convertDMStoDD = (degrees, minutes, seconds, direction) => {
                 let dd = degrees + minutes / 60 + seconds / (60 * 60);
-                if (direction === "S" || direction === "W") {
+                if (direction === 'S' || direction === 'W') {
                     dd = dd * -1;
-                } // Don't do anything for N or E
+                }
                 return dd;
             };
 

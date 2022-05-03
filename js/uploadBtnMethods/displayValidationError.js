@@ -1,4 +1,4 @@
-import {errorMessages} from "./errorMessages.js";
+import {errorMessages} from './errorMessages.js';
 
 const displayValidationError = (errorArr, placeToDisplay, selectedFiles) => {
 
@@ -21,7 +21,7 @@ const displayValidationError = (errorArr, placeToDisplay, selectedFiles) => {
     File size: ${(file.size / 1024 / 1024).toFixed(2)}MB
     File type: ${file.type}`;
         error.innerText =
-            `${file.size > 1024 * 1024 *3 ? errorMessages.fileSize : ''}
+            `${file.size > 1024 * 1024 ? errorMessages.fileSize : ''}
              ${!(file.type === 'image/jpeg' || 
                 file.type === 'image/jpg') ? errorMessages.fileType : ''}
     `;

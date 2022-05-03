@@ -1,6 +1,8 @@
 @import "normalize";
 
 $font: 'Roboto', sans-serif;
+$color-light-gray: #aeafb3;
+$light-font-color: #fff;
 
 html {
   font-family: $font;
@@ -127,14 +129,14 @@ button[class*="-"]:hover,
 .btn_upload:hover,
 .btn:hover,
 .dragover {
-  background-color: #aeafb3;
-  color: #fff;
+  background-color: $color-light-gray;
+  color: $light-font-color;
 }
 
 .btn_upload:focus {
   background-color: #707172;
-  color: #fff;
-  border-color: #aeafb3;
+  color: $light-font-color;
+  border-color: $color-light-gray;
 }
 
 .btn_upload,
