@@ -8,4 +8,4 @@ A vanilla JS app to upload picture files using file input and drag&drop
 - run `npm start` to spin up a local server
 - you can enter the app at `http://localhost:8080`
 
-Visit the website: [pictures-uploader](https://pictures-uploader.netlify.app/)
+Visit the website: [pictures-uploader](https://https://pictures-uploader-mw.netlify.app/)
