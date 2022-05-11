@@ -9,6 +9,5 @@ export function uploadOnCondition(fileList, uploadedFiles, errorFiles) {
         } else {
             uploadedFiles[key] = fileList[key];
         }
-        // uploadedFiles.push(fileList[key]);
     });
 }
